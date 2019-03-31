@@ -1,0 +1,20 @@
+#+TITLE: GengoAN Preparation
+
+GengoAN preparation
+
+#+begin_src sh
+$ ruby generate-tex-file.rb
+#+end_src
+
+Then you get =tex/generated.tex=.
+
+Just platex it and dvipdfmx it. Assume that you got =tex/generated.pdf=
+
+#+begin_src sh
+$ cd tex
+$ convert generated.pdf -geometry 32x32 s/32-%06d.png
+$ # or
+$ convert generated.pdf -geometry 64x64 s/64-%06d.png
+#+end_src
+
+(=convert= command is from ImageMagick.)
